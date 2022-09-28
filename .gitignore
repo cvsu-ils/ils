@@ -1,3 +1,5 @@
 .env
 composer.lock
+storage/forms/
+storage/images/
 vendor/
