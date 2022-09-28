@@ -2,36 +2,38 @@
     return $database['database'] = [
         'app' => [
 			'local' => [
-				'DRIVER' => env('DB_DRIVER', "mysql"),
-				'HOST' => env('DB_HOST', "localhost"),
-				'PORT' => env('DB_PORT', "80"),
-				'DATABASE' => env('DB_DATABASE', "database"),
-				'USERNAME' => env('DB_USERNAME', "root"),
-				'PASSWORD' => env('DB_PASSWORD', "")
+				'DB_DRIVER' => env('DB_DRIVER', "mysql"),
+				'DB_HOST' => env('DB_HOST', "localhost"),
+				'DB_PORT' => env('DB_PORT', "80"),
+				'DB_DATABASE' => env('DB_DATABASE', "cvsu_ils"),
+				'DB_USERNAME' => env('DB_USERNAME', "root"),
+				'DB_PASSWORD' => env('DB_PASSWORD', "")
 			],
 			'live' => [
-				'DRIVER' => "mysql",
-				'HOST' => "localhost",
-				'PORT' => "",
-				'DATABASE' => "database",
-				'USERNAME' => "root",
-				'PASSWORD' => ""
+				'DB_DRIVER' => "mysql",
+				'DB_HOST' => "localhost",
+				'DB_PORT' => "",
+				'DB_DATABASE' => "cvsu_ils",
+				'DB_USERNAME' => "libraryIT",
+				'DB_PASSWORD' => "libraryIT1234"
 			]
         ],
         'ils' => [
 			'local' => [
-				'DRIVER' => "mysql",
-				'HOST' => "localhost",
-				'DATABASE' => "database",
-				'USERNAME' => "root",
-				'PASSWORD' => ""
+				'DB_DRIVER' => env('DB_DRIVER', "mysql"),
+				'DB_HOST' => env('DB_HOST', "localhost"),
+				'DB_PORT' => env('DB_PORT', "80"),
+				'DB_DATABASE' => env('DB_DATABASE', "cvsu_ils"),
+				'DB_USERNAME' => env('DB_USERNAME', "root"),
+				'DB_PASSWORD' => env('DB_PASSWORD', "")
 			],
 			'live' => [
-				'DRIVER' => "mysql",
-				'HOST' => "localhost",
-				'DATABASE' => "database",
-				'USERNAME' => "root",
-				'PASSWORD' => ""
+				'DB_DRIVER' => "mysql",
+				'DB_HOST' => "localhost",
+				'DB_PORT' => "",
+				'DB_DATABASE' => "cvsu_ils",
+				'DB_USERNAME' => "libraryIT",
+				'DB_PASSWORD' => "libraryIT1234"
 			]
 		],
     ];
