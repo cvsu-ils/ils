@@ -24,7 +24,7 @@
                     } else {
                         echo '<div class="ils-mobile">
                             <div class="nav-item dropdown">
-                                <a class="nav-link p-0 dropdown-toggle text-white" href="javascript:void(0)" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="rounded-circle" src="' . $this->app->user['google_userinfo']['gu_picture'] . '" height="24px"> Hi! ' . $this->app->user['google_userinfo']['gu_name'] . '</a>
+                                <a class="nav-link p-0 dropdown-toggle text-white" href="javascript:void(0)" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="rounded-circle" src="' . $this->app->user->google_userinfo->gu_picture . '" height="24px"> Hi! ' . $this->app->user->google_userinfo->gu_name . '</a>
                                 <div class="dropdown-menu" aria-labelledby="dropdown08">
                                         <a class="dropdown-item" href="?view=profile">Profile</a>
                                         <a class="dropdown-item" href="?view=deauth">Signout</a>
