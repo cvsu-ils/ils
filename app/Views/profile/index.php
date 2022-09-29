@@ -1,5 +1,5 @@
 <?php 
-    $controller = new $this->app->controller();
+    $user = $this->app->user;
 ?>
 <div class="container-fluid ils-bg-default">
     <div class="container p-3">
@@ -25,12 +25,12 @@
                         <div class="card card-success card-outline">
                             <div class="card-body box-profile">
                                 <div class="text-center">
-                                    <img class="profile-user-img img-fluid img-circle" src="<?php echo $user['profile']['avatar'];?>" alt="User profile picture">
+                                    <img class="profile-user-img img-fluid img-circle" src="<?php echo $user->profile->avatar;?>" alt="User profile picture">
                                 </div>
-                                <h3 class="profile-username text-center"><?php echo $user['profile']['fullName'];?></h3>
+                                <h3 class="profile-username text-center"><?php echo $user->profile->fullName;?></h3>
                                 <?php
-                                    if($user['profile']['userType']['label'] != "Student") {
-                                        echo '<p class="text-muted text-center">' . $user['profile']['userType']['info']['position'] . '</p>';
+                                    if($user->profile->userType->label != "Student") {
+                                        echo '<p class="text-muted text-center">' . $user->profile->userType->info->position . '</p>';
                                     }
                                 ?>
                                 <!-- <a href="#" class="btn btn-block btn-default disabled"><b>Edit profile</b></a> -->
@@ -50,16 +50,16 @@
                                 </ul> -->
                                 <hr>
                                 <strong class="text-success"><i class="fas fa-venus-mars mr-1"></i> Sex</strong>
-                                <p class="text-muted"><?php echo $user['profile']['sex'];?></p>
+                                <p class="text-muted"><?php echo $user->profile->sex;?></p>
                                 <hr>
                                 <strong class="text-success"><i class="fas fa-map-marker-alt mr-1"></i> Address</strong>
-                                <p class="text-muted"><?php echo $user['profile']['address'];?></p>
+                                <p class="text-muted"><?php echo $user->profile->address;?></p>
                                 <hr>
                                 <strong class="text-success"><i class="fas fa-mobile-alt mr-1"></i> Contact Number</strong>
-                                <p class="text-muted"><?php echo $user['profile']['mobileNumber'];?></p>
+                                <p class="text-muted"><?php echo $user->profile->mobileNumber;?></p>
                                 <hr>
                                 <strong class="text-success"><i class="fas fa-at mr-1"></i> Email</strong>
-                                <p class="text-muted"><?php echo $user['google_userinfo']['gu_email'];?></p>
+                                <p class="text-muted"><?php echo $user->google_userinfo->gu_email;?></p>
                             </div>
                         </div>
                         <div class="card">
@@ -68,33 +68,33 @@
                             </div>
                             <div class="card-body">
                                 <strong class="text-success"><i class="fas fa-university mr-1"></i> Campus</strong>
-                                <p class="text-muted"><?php echo $user['profile']['campus']['name'];?></p>
+                                <p class="text-muted"><?php echo $user->profile->campus->name;?></p>
                                 <hr>
                                 <?php
-                                    if($user['profile']['userType']['label'] == "Staff") {
+                                    if($user->profile->userType->label == "Staff") {
                                         echo '
                                             <strong class="text-success"><i class="fas fa-id-card mr-1"></i> Employee ID</strong>
-                                            <p class="text-muted">' . $user['profile']['userType']['info']['id'] . '</p>
+                                            <p class="text-muted">' . $user->profile->userType->info->id . '</p>
                                             <hr>
                                             <strong class="text-success"><i class="fas fa-user mr-1"></i> Position</strong>
-                                            <p class="text-muted">' . $user['profile']['userType']['info']['position'] . '</p>
+                                            <p class="text-muted">' . $user->profile->userType->info->position . '</p>
                                             <hr>
                                             <strong class="text-success"><i class="fas fa-building mr-1"></i> Office</strong>
-                                            <p class="text-muted">' . $user['profile']['userType']['info']['office']['name'] . '</p>
+                                            <p class="text-muted">' . $user->profile->userType->info->office->name . '</p>
                                         ';
                                     }
                                 ?>
                                 <?php
-                                    if($user['profile']['userType']['label'] == "Student") {
+                                    if($user->profile->userType->label == "Student") {
                                         echo '
                                             <strong class="text-success"><i class="fas fa-id-card mr-1"></i> Student Number</strong>
-                                            <p class="text-muted">' . $user['profile']['userType']['info']['studentNumber'] . '</p>
+                                            <p class="text-muted">' . $user->profile->userType->info->studentNumber . '</p>
                                             <hr>
                                             <strong class="text-success"><i class="fas fa-building mr-1"></i> College</strong>
-                                            <p class="text-muted">' . $user['profile']['userType']['info']['college']['name'] . '</p>
+                                            <p class="text-muted">' . $user->profile->userType->info->college->name . '</p>
                                             <hr>
                                             <strong class="text-success"><i class="fas fa-briefcase mr-1"></i> Course</strong>
-                                            <p class="text-muted">' . $user['profile']['userType']['info']['course']['name'] . '</p>
+                                            <p class="text-muted">' . $user->profile->userType->info->course->name . '</p>
                                             <hr>
                                         ';
                                     }

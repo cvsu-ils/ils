@@ -1,21 +1,22 @@
 <?php
     $studentNumber = NULL;
-    $lastName = $user['google_userinfo']['gu_familyName'];
-    $firstName = $user['google_userinfo']['gu_givenName'];
+    $lastName = $user->google_userinfo->gu_familyName;
+    $firstName = $user->google_userinfo->gu_givenName;
     $sex = "";
     $address = "";
     $mobileNumber = "";
     $collegeId = 0;
     $officeId = 0;
     $userType = "";
+
     if($tempInfo) {
-        $studentNumber = $tempInfo['student_number'];
-        $lastName = ucwords(strtolower($tempInfo['last_name'])) ?? $user['google_userinfo']['gu_familyName'];
-        $firstName = ucwords(strtolower($tempInfo['first_name'])) ?? $user['google_userinfo']['gu_givenName'];
-        $sex = $tempInfo['sex'] == "M" ? "Male" : "Female";
-        $address =  ucwords(strtolower($tempInfo['address']));
-        $mobileNumber = "0" . $tempInfo['mobile_number'];
-        $collegeId = $tempInfo['college_id'];
+        $studentNumber = $tempInfo->student_number;
+        $lastName = ucwords(strtolower($tempInfo->last_name)) ?? $user->google_userinfo->gu_familyName;
+        $firstName = ucwords(strtolower($tempInfo->first_name)) ?? $user->google_userinfo->gu_givenName;
+        $sex = $tempInfo->sex == "M" ? "Male" : "Female";
+        $address =  ucwords(strtolower($tempInfo->address));
+        $mobileNumber = "0" . $tempInfo->mobile_number;
+        $collegeId = $tempInfo->college_id;
         $userType = "Student";
     }
 ?>
