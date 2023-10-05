@@ -11,7 +11,8 @@
                 'secret' => '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',
                 'redirect' => 'http://localhost/staging/cvsu_ils/?view=confirm'
             ],
-		    'userClass' => "\IntegratedLibrarySystem\Core\Controllers\User"
+		    'userClass' => "\IntegratedLibrarySystem\Core\Controllers\User",
+		    'guestClass' => "\IntegratedLibrarySystem\Core\Controllers\GuestController"
         ]
     ]
 ?>

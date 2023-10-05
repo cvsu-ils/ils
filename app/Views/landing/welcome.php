@@ -1,14 +1,13 @@
 <?php
     if($this->app->user && !$profileController->HasProfile()) {
         echo '
-            <div class="container-fluid p-5">
-            <div class="container">
-                <div class="alert alert-warning alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <h5><i class="icon fas fa-exclamation-triangle"></i> Alert!</h5>
-                    To continue using Cavite State University Integrated Library System Services! Click <a href="?view=createprofile"><strong>create profile</strong></a> details.
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="alert alert-warning alert-dismissible my-5 p-5">
+                        <h3><i class="icon fas fa-exclamation-triangle"></i> Alert!</h3>
+                        To continue using Cavite State University Integrated Library System Full Services! Click <a href="?view=createprofile"><strong>create profile</strong></a> details.
+                    </div>
                 </div>
-            </div>
             </div>
         ';
     }
@@ -121,7 +120,7 @@
                       <div class="card-body">
                           <h5 class="card-title">E-Books</h5>
                           <p class="card-text text-muted">Search by category, search by title and download a copy.</p>
-                          <a href="http://library.cvsu.edu.ph/ebooks" class="btn btn-primary ils-btn-green" target="_blank">Browse e-books</a>
+                          <a href="?view=ebooks" class="btn btn-primary ils-btn-green" target="_blank">Browse e-books</a>
                       </div>
                   </div>
               </div>
@@ -135,43 +134,58 @@
                       <div class="card-body">
                           <h5 class="card-title">E-Journals</h5>
                           <p class="card-text text-muted">Look for open access e-journals, search by category and more...</p>
-                          <a href="http://library.cvsu.edu.ph/ejournal" class="btn btn-primary ils-btn-green" target="_blank">Browse e-journals</a>
+                          <a href="?view=ejournals" class="btn btn-primary ils-btn-green" target="_blank">Browse e-journals</a>
                       </div>
                   </div>
               </div>
           </div>
       </div>
       <div class="col-md-3">
-          <div class="card" style="width: 18rem;">
+          <div class="card">
               <div class="card-header font-weight-bold text-dark">
                   Bulletin Board
               </div>
               <ul class="list-group list-group-flush">
-                  <li class="list-group-item text-muted text-truncate" style="font-size: 14px;"><a class="link-default" href="http://library.cvsu.edu.ph/cgi-bin/koha/opac-shelves.pl?op=view&shelfnumber=27&sortfield=title" target="_blank"><span class="badge badge-danger">NEW</span> 2022 E-Books</a></li>
-                  <li class="list-group-item text-muted text-truncate" style="font-size: 14px;"><a class="link-default" href="http://library.cvsu.edu.ph/cgi-bin/koha/opac-shelves.pl?op=view&shelfnumber=26" target="_blank"><span class="badge badge-danger">NEW</span> 2022 Print Books</a></li>
+                  <li class="list-group-item text-muted text-truncate" style="font-size: 14px;"><a class="link-default" href="http://library.cvsu.edu.ph/cgi-bin/koha/opac-shelves.pl?op=view&shelfnumber=65" target="_blank"><span class="badge badge-danger">NEW</span> 2023 Print Books</a></li>
+                  <li class="list-group-item text-muted text-truncate" style="font-size: 14px;"><a class="link-default" href="http://library.cvsu.edu.ph/cgi-bin/koha/opac-shelves.pl?op=view&shelfnumber=91" target="_blank"><span class="badge badge-danger">NEW</span> 2023 Online E-Books</a></li>
+                  <li class="list-group-item text-muted text-truncate" style="font-size: 14px;"><a class="link-default" href="http://library.cvsu.edu.ph/cgi-bin/koha/opac-shelves.pl?op=view&shelfnumber=80" target="_blank"><span class="badge badge-danger">NEW</span> 2023 Theses</a></li>
+                  <li class="list-group-item text-muted text-truncate" style="font-size: 14px;"><a class="link-default" href="http://library.cvsu.edu.ph/cgi-bin/koha/opac-shelves.pl?op=view&shelfnumber=27&sortfield=title" target="_blank">2022 E-Books</a></li>
+                  <li class="list-group-item text-muted text-truncate" style="font-size: 14px;"><a class="link-default" href="http://library.cvsu.edu.ph/cgi-bin/koha/opac-shelves.pl?op=view&shelfnumber=26" target="_blank">2022 Print Books</a></li>
                   <li class="list-group-item text-muted text-truncate" style="font-size: 14px;"><a class="link-default" href="http://library.cvsu.edu.ph/cgi-bin/koha/opac-shelves.pl?op=view&shelfnumber=12&sortfield=title" target="_blank">2021 Online E-Books</a></li>
-                  <li class="list-group-item text-muted text-truncate" style="font-size: 14px;"><a class="link-default" href="http://library.cvsu.edu.ph/cgi-bin/koha/opac-shelves.pl?op=view&shelfnumber=10&sortfield=title" target="_blank">2021 Print Books</a></li>
-                  <li class="list-group-item text-muted text-truncate" style="font-size: 14px;"><a class="link-default" href="http://library.cvsu.edu.ph/cgi-bin/koha/opac-shelves.pl?op=view&shelfnumber=6" target="_blank">2020 Print Books</a></li>
+                  <!-- <li class="list-group-item text-muted text-truncate" style="font-size: 14px;"><a class="link-default" href="http://library.cvsu.edu.ph/cgi-bin/koha/opac-shelves.pl?op=view&shelfnumber=10&sortfield=title" target="_blank">2021 Print Books</a></li> -->
+                  <!-- <li class="list-group-item text-muted text-truncate" style="font-size: 14px;"><a class="link-default" href="http://library.cvsu.edu.ph/cgi-bin/koha/opac-shelves.pl?op=view&shelfnumber=6" target="_blank">2020 Print Books</a></li> -->
                   <!-- <li class="list-group-item" style="font-size: 14px;"><a class="link-default" href="#">Read more...</a></li> -->
               </ul>
           </div>
           <br>
-          <div class="card reveal" style="width: 18rem;">
+          <div class="card reveal">
+            <div class="card-header font-weight-bold text-dark">
+                Online Library Services
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item text-muted" style="font-size: 14px;"><a class="link-default" href="https://docs.google.com/forms/d/e/1FAIpQLSdq-kE4yp1UZAgnuWkMb-K9ivdYTE7cUjVGkV-Apx_680uNqA/viewform" target="_blank"><span class="badge badge-danger">NEW</span> Request for CvSU THESIS Abstract</a></li>
+                <li class="list-group-item text-muted" style="font-size: 14px;"><a class="link-default" href="https://docs.google.com/forms/d/e/1FAIpQLSe8Sc8g254V_ijhLcm-rkJKdJFXNDzRC9dFbpP7vugB9p4GZw/viewform" target="_blank"><span class="badge badge-danger">NEW</span> Request for PRINT BOOK Pages</a></li>
+                <li class="list-group-item text-muted" style="font-size: 14px;"><a class="link-default" href="https://docs.google.com/forms/d/e/1FAIpQLSfSoAj3qM4b_ttQMZLuimqgwkfHDH1NyJ7S4eyjHD7Vr4j7EQ/viewform" target="_blank"><span class="badge badge-danger">NEW</span> Request for E-BOOK Password</a></li>
+                <li class="list-group-item text-muted" style="font-size: 14px;"><a class="link-default" href="https://docs.google.com/forms/d/157pIlBi3uZUxosHCkL8g4kK0DbcNbpSVqGcXOlg_pyg/viewform?pli=1&fbclid=IwAR2fdmmzwADRfyBeVxDJcm4SPcVzMDe1_OV21-xHhVhP0DD5wbNYN5Lpg0A&pli=1&edit_requested=true" target="_blank">Online Submission of Thesis or Manuscripts</a></li>
+                <li class="list-group-item text-muted text-truncate" style="font-size: 14px;"><a class="link-default" href="https://sites.google.com/cvsu.edu.ph/cvsu-main-campus-library/home" target="_blank">CvSU Library Brochure</a></li>
+            </ul>
+          </div>
+          <!-- <br>
+          <div class="card reveal">
               <div class="card-header font-weight-bold text-dark">
                   Other Links
               </div>
               <ul class="list-group list-group-flush">
                   <li class="list-group-item text-muted text-truncate" style="font-size: 14px;"><a class="link-default" href="https://sites.google.com/cvsu.edu.ph/cvsu-main-campus-library/home" target="_blank">CvSU Library Brochure</a></li>
-                  <li class="list-group-item text-muted" style="font-size: 14px;"><a class="link-default" href="https://docs.google.com/forms/d/157pIlBi3uZUxosHCkL8g4kK0DbcNbpSVqGcXOlg_pyg/viewform?pli=1&fbclid=IwAR2fdmmzwADRfyBeVxDJcm4SPcVzMDe1_OV21-xHhVhP0DD5wbNYN5Lpg0A&pli=1&edit_requested=true" target="_blank"><span class="badge badge-danger">NEW</span> Online Submission of Thesis or Manuscripts</a></li>
               </ul>
-          </div>
+          </div> -->
           <br>
-          <div class="card reveal" style="width: 18rem;">
+          <div class="card reveal">
               <div class="card-header font-weight-bold text-dark">
                   Downloadable Library Forms
               </div>
               <ul class="list-group list-group-flush">
-                  <li class="list-group-item text-muted" style="font-size: 14px;"><a class="link-default" href="?view=downloads&form=authors-permission-form" target="_blank"><span class="badge badge-danger">NEW</span> Authors Permission Form (ULIB-QF-01)</a></li>
+                  <li class="list-group-item text-muted" style="font-size: 14px;"><a class="link-default" href="?view=downloads&form=authors-permission-form" target="_blank">Authors Permission Form (ULIB-QF-01)</a></li>
               </ul>
           </div>
       </div>
@@ -192,14 +206,14 @@
           </div>
           <div class="col-md-4 col-sm-12">
               <div class="p-3 text-center text-white">
-                  <h1 class="text-gradient text-white"><span class="value" akhi="4063">0</span></h1>
+                  <h1 class="text-gradient text-white"><span class="value" akhi="4000">0</span>+</h1>
                   <h5 class="mt-3 font-weight-bold">E-Books</h5>
                   <p class="text-sm font-weight-normal" style="font-size: 14px;">From open access and purchased<br>e-books</p>
               </div>
           </div>
           <div class="col-md-4 col-sm-12">
               <div class="p-3 text-center text-white">
-                  <h1 class="text-gradient text-white"><span class="value" akhi="1851">0</span></h1>
+                  <h1 class="text-gradient text-white"><span class="value" akhi="2000">0</span>+</h1>
                   <h5 class="mt-3 font-weight-bold">E-Journals</h5>
                   <p class="text-sm font-weight-normal" style="font-size: 14px;">From open access, subscribed, and purchased e-journals</p>
               </div>
@@ -299,6 +313,8 @@
         const animate = () => {
             const value = +counter.getAttribute('akhi');
             const data = +counter.innerText;
+
+            console.log(data);
             
             const time = value / speed;
             if(data < value) {

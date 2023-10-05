@@ -18,7 +18,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="storage/js/main.js"></script>
-        <script src="storage/js/tracker.js"></script>
+        <!-- <script src="storage/js/tracker.js"></script> -->
 		<title><?php echo $this->title ?></title>
 	</head>
 	<body class="ils-bg-default">

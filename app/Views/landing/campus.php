@@ -96,8 +96,8 @@
             'goals' => array('To provide a conducive place where clientele can stay and study quietly;', 'To respond to the students’ multitude of academic needs;', 'To develop and improve CvSU Bacoor City Campus Library’s collection such as books, serials, non-print materials; and', 'To continually assess the needs and competence of the library management and its resources.'),
             'objectives' => array('Develop an adequate and relevant collection of material resources, books, periodicals, and non-book materials appropriate to each level of the instructional program and to the needs of research;', 'Expand a broad reference collection which underscores Filipiniana, and research resources as functional tools of scholarship;', 'Develop innovative approaches for the effective use of the above collections in support of the needs, interests and concerns of the library;', 'Provide library orientation sessions for the freshmen classes, as well as to give library tour on request', 'Provide adequate physical facilities and equipment that will make possible the most effective use of the library and library materials.'),
             'personnels' => array(
-                array('avatar' => null, 'name' => ' Lorema N. Acapulco, RL', 'position' => 'Campus Librarian'),
-                array('avatar' => null, 'name' => 'Russel C. Cacho', 'position' => 'Library Staff')
+                array('avatar' => 'storage/images/personnels/bacoor-city/lorema-n-acapulco.jpg', 'name' => 'Lorema N. Acapulco, RL', 'position' => 'Campus Librarian'),
+                array('avatar' => 'storage/images/personnels/bacoor-city/russel-c-cacho.jpg', 'name' => 'Russel C. Cacho', 'position' => 'Library Assistant')
             ),
             'statistics' => array(
                 array('title' => 'Core Collection', 'subtitle' => '', 'count' => '3,547'),
@@ -225,8 +225,8 @@
             'goals' => array(),
             'objectives' => array(),
             'personnels' => array(
-                array('avatar' => null, 'name' => 'Marcela Lean M. Espiritu, RL, Maed-LIS', 'position' => 'Campus Librarian'),
-                array('avatar' => null, 'name' => 'Editha A. Saria', 'position' => 'Library Assistant')
+                array('avatar' => 'storage/images/personnels/cavite-city/marcela-lean-m-espiritu.jpg', 'name' => 'Marcela Lean M. Espiritu, RL, Maed-LIS', 'position' => 'Campus Librarian'),
+                array('avatar' => 'storage/images/personnels/cavite-city/editha-a-saria.jpg', 'name' => 'Editha A. Saria', 'position' => 'Library Assistant')
             ),
             'statistics' => array(
                 array('title' => 'Core Collection', 'subtitle' => '', 'count' => '8,383'),
@@ -292,9 +292,9 @@
             'goals' => array(),
             'objectives' => array(),
             'personnels' => array(
-                array('avatar' => null, 'name' => 'Marvie Joy R. Sostino, RL', 'position' => 'Campus Librarian'),
-                array('avatar' => null, 'name' => 'Maria Teresa R. Malayao', 'position' => 'Library Assistant'),
-                array('avatar' => null, 'name' => 'Jonathan A. Diño', 'position' => 'Library Assistant')
+                array('avatar' => 'storage/images/personnels/imus-city/marvie-joy-r-sostino.jpg', 'name' => 'Marvie Joy R. Sostino, RL', 'position' => 'Campus Librarian'),
+                array('avatar' => 'storage/images/personnels/imus-city/maria-teresa-r-malayao.jpg', 'name' => 'Maria Teresa R. Malayao', 'position' => 'Library Assistant'),
+                array('avatar' => 'storage/images/personnels/imus-city/jonathan-a-diño.jpg', 'name' => 'Jonathan A. Diño', 'position' => 'Library Assistant')
             ),
             'statistics' => array(
                 array('title' => 'Core Collection', 'subtitle' => 'Volumes', 'count' => '6,496'),
@@ -337,7 +337,8 @@
             'goals' => array(),
             'objectives' => array(),
             'personnels' => array(
-                array('avatar' => null, 'name' => 'Rien Rose V. Salvador, RL, MLIS', 'position' => 'Campus Librarian')
+                array('avatar' => 'storage/images/personnels/naic/rien-rose-salvador.jpg', 'name' => 'Rien Rose V. Salvador, RL, MLIS', 'position' => 'Campus Librarian'),
+                array('avatar' => 'storage/images/personnels/naic/kristine-m-mojica.jpg', 'name' => 'Kristine M. Mojica, RL, MLIS', 'position' => 'Assistant Campus Librarian')
             ),
             'statistics' => array(
                 array('title' => 'Core Collection', 'subtitle' => 'Titles', 'count' => '6,496'),
@@ -413,7 +414,8 @@
             'goals' => array(),
             'objectives' => array(),
             'personnels' => array(
-                array('avatar' => null, 'name' => 'Roselyn Cea Baltar, RL', 'position' => 'Campus Librarian')
+                array('avatar' => 'storage/images/personnels/tanza/Roselyn-c-baltar.jpg', 'name' => 'Roselyn Cea Baltar, RL', 'position' => 'Campus Librarian'),
+                array('avatar' => 'storage/images/personnels/tanza/Mariechelle-r-correo.jpg', 'name' => 'Mariechelle R. Correo', 'position' => 'Library Assistant')
             ),
             'statistics' => array(
                 array('title' => 'Core Collection', 'subtitle' => '', 'count' => '1,720'),
@@ -447,8 +449,8 @@
             'goals' => array(),
             'objectives' => array(),
             'personnels' => array(
-                array('avatar' => null, 'name' => 'Loran Camille V. Sara, RL', 'position' => 'Campus Librarian'),
-                array('avatar' => null, 'name' => 'Rona Zaira S. Delos Santos', 'position' => 'Library Assistant')
+                array('avatar' => 'storage/images/personnels/trece-martires-city/loran-camille-v-sara.jpg', 'name' => 'Loran Camille V. Sara, RL', 'position' => 'Campus Librarian'),
+                array('avatar' => 'storage/images/personnels/trece-martires-city/angelica-t-erce-ollano.jpg', 'name' => 'Angelica T. Erce-Ollano', 'position' => 'Library Assistant')
             ),
             'statistics' => array(
                 array('title' => 'Core Collection', 'subtitle' => '', 'count' => '2,494'),
@@ -575,9 +577,8 @@
             ?>
             <?php
                 if(array_key_exists('personnels', $data)) {
-                    $style = count($data['personnels']) == 1 ? 'style="width: 236px;"' : '';
                     echo '<h5 class="mb-3 rounded text-uppercase font-weight-bold" id="Personnel">Library Personnel</h5>';
-                    echo '<div class="card-deck" ' . $style . '>';
+                    echo '<div class="row">';
                     $count = 0;
                     $avatar = null;
                     foreach($data['personnels'] as $personnel) {
@@ -585,13 +586,15 @@
                             $avatar = '<img src="' . $personnel['avatar'] . '" alt="' . $personnel['name'] . ' - ' . $personnel['position'] . '">';
                         }
                         echo '
-                            <div class="card shadow-sm">
-                                ' . $avatar . '
-                                <div class="card-body">
-                                <h6 class="card-title">' . $personnel['name'] . '</h6>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">' . $personnel['position'] . '</small>
+                            <div class="col-lg-3 col-md-6 col-12 me-3 mb-3">
+                                <div class="card shadow-sm h-100">
+                                    ' . $avatar . '
+                                    <div class="card-body">
+                                    <h6 class="card-title">' . $personnel['name'] . '</h6>
+                                    </div>
+                                    <div class="card-footer">
+                                        <small class="text-muted">' . $personnel['position'] . '</small>
+                                    </div>
                                 </div>
                             </div>
                         ';
@@ -605,11 +608,13 @@
                     echo '<div class="row">';
                     foreach($data['statistics'] as $stats) {
                         echo '
-                            <div class="col-md-3">
-                                <h5 class="p-2 px-3 m-0 text-white text-center text-uppercase ils-bg-green">' . $stats['title'] . '</h5>
-                                <div class="shadow-sm p-5 px-3 rounded mb-3 text-center text-uppercase bg-white">
-                                    <h1 class="font-weight-bold">' . $stats['count'] . '</h1>
-                                    <p class="text-muted font-weight-bold">' . $stats['subtitle'] . '</p>
+                            <div class="col-lg-3 col-md-6 col-12 mb-3">
+                                <div class="card shadow-sm h-100">
+                                    <h5 class="w-100 py-2 px-3 m-0 rounded text-white text-center text-uppercase ils-bg-green" style="font-size: auto !important;">' . $stats['title'] . '</h5>
+                                    <div class="p-5 px-3 rounded mb-3 text-center text-uppercase bg-white">
+                                        <h1 class="font-weight-bold">' . $stats['count'] . '</h1>
+                                        <p class="text-muted font-weight-bold">' . $stats['subtitle'] . '</p>
+                                    </div>
                                 </div>
                             </div>
                         ';
@@ -694,9 +699,9 @@
                     ';
                 }
             ?>
-            <div class="mapouter">
+            <div class="mapouter w-100">
                 <div class="gmap_canvas">
-                    <iframe width="600" height="500" id="gmap_canvas" src="<?php echo $data['others']['googlemaps']['link'];?>" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <iframe width="100%" height="500" id="gmap_canvas" src="<?php echo $data['others']['googlemaps']['link'];?>" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                 </div>
             </div>
         </div>

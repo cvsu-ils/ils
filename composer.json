@@ -8,6 +8,7 @@
     "autoload": {
         "psr-4": {
             "InfinityBrackets\\": "vendor/infinitybrackets/php-mvc-core/src/",
+            "InfinityBrackets\\Exceptional\\": "vendor/infinitybrackets/exceptional-database/src/",
             "IntegratedLibrarySystem\\App\\": "app/"
         }
     },
