@@ -10,27 +10,43 @@
                     </div>
                 </a>
                 <?php
-                    if(!$this->app->user) {
-                        echo '<div class="ils-mobile pt-2">
-                            <a href="' . $this->app->config->auth->google->url . '">
-                                <div class="google-btn d-inline-block">
-                                    <div class="google-icon-wrapper">
-                                    <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+                    if($this->app->user || $this->app->guest) {
+                        if($this->app->user) {
+                            echo '
+                                <div class="ils-mobile">
+                                    <div class="nav-item dropdown">
+                                        <a class="nav-link p-0 dropdown-toggle text-white" href="javascript:void(0)" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="rounded-circle" src="' . $this->app->user->google_userinfo->gu_picture . '" height="24px"> Hi! ' . $this->app->user->google_userinfo->gu_name . '</a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdown08">
+                                                <a class="dropdown-item" href="?view=profile">Profile</a>
+                                                <a class="dropdown-item" href="?view=deauth">Signout</a>
+                                        </div>
                                     </div>
-                                    <p class="btn-text"><b>Sign in with google</b></p>
                                 </div>
-                            </a>
-                        </div>';
+                            ';
+                        } else {
+                            echo '
+                                <div class="ils-mobile">
+                                    <div class="nav-item dropdown">
+                                        <a class="nav-link p-0 dropdown-toggle text-white" href="javascript:void(0)" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="rounded-circle" src="storage/images/CvSU-logo.png" height="24px"> Hi! Guest</a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdown08">
+                                            <a class="dropdown-item" href="?view=deauth">Signout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            ';
+                        }
                     } else {
-                        echo '<div class="ils-mobile">
-                            <div class="nav-item dropdown">
-                                <a class="nav-link p-0 dropdown-toggle text-white" href="javascript:void(0)" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="rounded-circle" src="' . $this->app->user->google_userinfo->gu_picture . '" height="24px"> Hi! ' . $this->app->user->google_userinfo->gu_name . '</a>
-                                <div class="dropdown-menu" aria-labelledby="dropdown08">
-                                        <a class="dropdown-item" href="?view=profile">Profile</a>
-                                        <a class="dropdown-item" href="?view=deauth">Signout</a>
-                                </div>
-                            </div>
-                        </div>';
+                        echo '
+                            <div class="ils-mobile pt-2">
+                                <a href="' . $this->app->config->auth->google->url . '">
+                                    <div class="cvsu-google-btn d-inline-block">
+                                        <div class="cvsu-google-icon-wrapper">
+                                            <img class="cvsu-google-icon" src="storage/images/CvSU-logo-64x64.webp"/>
+                                        </div>
+                                        <p class="btn-text"><b>Sign in with CvSU email</b></p>
+                                    </div>
+                                </a>
+                            </div>';
                     }
                 ?>
             </div>
@@ -70,12 +86,12 @@
                         </a>
                     </div>
                     <div class="accordion-item-content-item">
-                        <a href="http://library.cvsu.edu.ph/ebooks" class="text-dark accordion-content-link" target="_blank">
+                        <a href="?view=ebooks" class="text-dark accordion-content-link">
                             <h5 class="text-main">E-Books</h5>
                         </a>
                     </div>
                     <div class="accordion-item-content-item">
-                        <a href="http://library.cvsu.edu.ph/ejournal" class="text-dark accordion-content-link" target="_blank">
+                        <a href="?view=ejournals" class="text-dark accordion-content-link">
                             <h5 class="text-main">E-Journals</h5>
                         </a>
                     </div>
@@ -245,16 +261,9 @@
                                         </div>
                                     </div>
                                 </a>
-                                <!-- <div class="p-3">
-                                    <h4 class="text-main">E-Library</h4>
-                                    <a href="http://library.cvsu.edu.ph/" target="_blank" class="text-dark menu-content-link">Home</a>
-                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdq-kE4yp1UZAgnuWkMb-K9ivdYTE7cUjVGkV-Apx_680uNqA/viewform" target="_blank" class="text-dark menu-content-link">Request for CvSU THESIS Abstract</a>
-                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe8Sc8g254V_ijhLcm-rkJKdJFXNDzRC9dFbpP7vugB9p4GZw/viewform" target="_blank" class="text-dark menu-content-link">Request for PRINT BOOK Pages</a>
-                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSoAj3qM4b_ttQMZLuimqgwkfHDH1NyJ7S4eyjHD7Vr4j7EQ/viewform" target="_blank" class="text-dark menu-content-link">Request for E-BOOK Password</a>
-                                </div> -->
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-12">
-                                <a href="http://library.cvsu.edu.ph/ebooks" target="_blank">
+                                <a href="?view=ebooks">
                                     <div class="ils-services-card ils-services-ebooks">
                                         <div class="overlay"></div>
                                         <div class="content">
@@ -263,14 +272,9 @@
                                         </div>
                                     </div>
                                 </a>
-                                <!-- <div class="p-3">
-                                    <h4 class="text-main">E-Books</h4>
-                                    <a href="http://library.cvsu.edu.ph/ebooks" target="_blank" class="text-dark menu-content-link">Home</a>
-                                    <a href="http://library.cvsu.edu.ph/ebooks/eshelf.php" target="_blank" class="text-dark menu-content-link">E-Shelf</a>
-                                </div> -->
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-12">
-                                <a href="http://library.cvsu.edu.ph/ejournal" target="_blank">
+                                <a href="?view=ejournals">
                                     <div class="ils-services-card ils-services-ejournals">
                                         <div class="overlay"></div>
                                         <div class="content">
@@ -279,11 +283,6 @@
                                         </div>
                                     </div>
                                 </a>
-                                <!-- <div class="p-3">
-                                <h4 class="text-main">E-Journals</h4>
-                                <a href="http://library.cvsu.edu.ph/ejournal" target="_blank" class="text-dark menu-content-link">Home</a>
-                                <a href="http://library.cvsu.edu.ph/ejournal/eshelf.php" target="_blank" class="text-dark menu-content-link">E-Shelf</a>
-                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -318,24 +317,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                                <div class="p-3">
-                                    <a href="http://library.cvsu.edu.ph/ebooks" target="_blank" class="text-dark menu-content-link">
-                                        <h4 class="text-main">Online Library Services</h4>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <div class="p-3">
-                                    <a href="http://library.cvsu.edu.ph/ebooks" target="_blank" class="text-dark menu-content-link">
-                                        <h4 class="text-main">Physical Library Services</h4>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
             <div class="menu-item">

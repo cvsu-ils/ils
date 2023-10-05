@@ -1,6 +1,6 @@
 <div class="container-fluid bg-dark">
     <div class="row no-gutters ils-footer">
-        <div class="col-md-12">
+        <div class="col-md-12 text-center text-md-left">
             <img class="ils-header-logo" src="storage/images/CvSU-logo-64x64.webp" width="64px" height="64px">
             <div class="ils-website text-white">
                 Cavite State University
@@ -23,6 +23,7 @@
                     <a class="d-block text-white" href="?view=about#Mission">Mission</a>
                     <a class="d-block text-white" href="?view=about#Goals">Goals</a>
                     <a class="d-block text-white" href="?view=about#Objectives">Objectives</a>
+                    <a class="d-block text-white" href="https://cvsu.edu.ph/" target="_blank">CvSU Website</a>
                 </div>
                 <div class="col-md-3">
                     <h5 class="text-white">CvSU Campus Library</h5>
@@ -49,10 +50,10 @@
     </div>
 </div>
 <div class="container-fluid ils-bg-alt">
-    <footer class="main-footer ils-bg-alt p-3">
+    <footer class="ils-bg-alt p-3 text-center text-md-left">
         <div class="float-right d-none d-sm-inline">
             <span class="text-muted">CvSU Integrated Library System v4.00</span>
         </div>
-        <strong class="text-muted">Copyright &copy; 2022 <a href="./">Cavite State University Integrated Library System</strong></a>
+        <strong class="text-muted">Copyright &copy; <?php echo date('Y');?> <a href="./">Cavite State University Integrated Library System</strong></a>
     </footer>
 </div>

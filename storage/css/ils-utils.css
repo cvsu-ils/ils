@@ -137,22 +137,6 @@ a {
   font-weight: normal;
   color: #333;
 }
-@media (max-width: 47.95em) {
-	.ils-header-sm {
-	  text-align: center !important;
-	}
-	.google-icon {
-		margin-left: -6px !important;
-	}
-	.ils-website-sub {
-		display: block !important;
-	}
-  }
-  @media (min-width: 64em) {
-	.ils-header-sm {
-		text-align: none !important;
-	}
-  }
 /* ILS FOOTER */
 .ils-footer {
 	padding: 50px 100px;
@@ -243,17 +227,6 @@ a {
 	font-family: 'Mouse Memoirs', sans-serif !important;
 	font-size: 3rem;
 }
-@media screen and (max-width: 767px) {
-	.ils-header, .ils-header-logo, .ils-website, .ils-website-sub {
-		text-align: center;
-	}
-	.ils-mobile {
-		float: none;
-	}
-	.google-icon {
-		margin-left: -8px;
-	}
-}
 /* GALLERY */
 .tz-gallery {
     padding: 0px 20px;
@@ -278,7 +251,7 @@ a {
     opacity: 0;
     color: #fff;
     font-size: 26px;
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'FontAwesome';
     content: '\f002';
     pointer-events: none;
     z-index: 9000;
@@ -375,4 +348,90 @@ a {
 .reveal.active{
 	transform: translateY(0px);
 	opacity: 1;
+}
+.ils-btn {
+	color: white !important;
+	background-color: #408c40 !important;
+}
+.ils-btn:hover { 
+	background-color: #2a782a !important;
+}
+/* CVSU GOOGLE LOGIN BUTTON */
+.cvsu-google-btn {
+	width: 215px;
+	height: 42px;
+	background-color: #1b651b;
+	border-radius: 2px;
+	box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
+}
+.cvsu-google-icon-wrapper {
+	position: absolute;
+	margin-top: 1px;
+	margin-left: 1px;
+	width: 40px;
+	height: 40px;
+	border-radius: 2px;
+	background-color: #fff;
+}
+.cvsu-google-icon {
+	position: absolute;
+	margin-top: 11px;
+	margin-left: 11px;
+	width: 18px;
+	height: 18px;
+}
+.cvsu-google-btn:hover {
+	box-shadow: 0 0 6px #1b651b;
+}
+.cvsu-google-btn:active {
+	background: #1b651b;
+}
+.btn-mobile {
+	width: initial;
+}
+@media screen and (min-width: 375px) and (max-width: 768px) {
+	.ils-header, .ils-header-logo, .ils-website, .ils-website-sub {
+		text-align: center !important;
+		line-height: 1em !important;
+	}
+	.ils-mobile {
+		margin: 1rem 0;
+		float: none;
+	}
+	.cvsu-google-icon,
+	.google-icon {
+		margin-left: -8px;
+	}
+	.btn-mobile {
+		width: 100% !important;
+	}
+}
+@media screen and (max-width: 375px) {
+	.ils-header-sm {
+	  text-align: center !important;
+	}
+	.google-icon {
+		margin-left: -6px !important;
+	}
+	.ils-website {
+		padding: 10px 0px;
+		line-height: 1em !important;
+	}
+	.ils-website-sub {
+		display: block !important;
+		line-height: 1em !important;
+	}
+	.cvsu-google-icon {
+		margin-left: -9px !important;
+	}
+	.ils-footer {
+		padding: 20px 30px;
+	}
+	.btn-mobile {
+		width: 100% !important;
+	}
+	.ils-mobile {
+		margin: 1rem 0;
+		float: none;
+	}
 }

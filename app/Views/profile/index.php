@@ -71,17 +71,28 @@
                                 <p class="text-muted"><?php echo $user->profile->campus->name;?></p>
                                 <hr>
                                 <?php
-                                    if($user->profile->userType->label == "Staff") {
+                                    if($user->profile->userType->label == "Staff" || $user->profile->userType->label == "Faculty") {
                                         echo '
                                             <strong class="text-success"><i class="fas fa-id-card mr-1"></i> Employee ID</strong>
                                             <p class="text-muted">' . $user->profile->userType->info->id . '</p>
                                             <hr>
                                             <strong class="text-success"><i class="fas fa-user mr-1"></i> Position</strong>
                                             <p class="text-muted">' . $user->profile->userType->info->position . '</p>
-                                            <hr>
-                                            <strong class="text-success"><i class="fas fa-building mr-1"></i> Office</strong>
-                                            <p class="text-muted">' . $user->profile->userType->info->office->name . '</p>
                                         ';
+                                        if($user->profile->userType->info->college) {
+                                            echo '
+                                                <hr>
+                                                <strong class="text-success"><i class="fas fa-building mr-1"></i> College</strong>
+                                                <p class="text-muted">' . $user->profile->userType->info->college->name . '</p>
+                                            ';
+                                        }
+                                        if($user->profile->userType->info->office) {
+                                            echo '
+                                                <hr>
+                                                <strong class="text-success"><i class="fas fa-building mr-1"></i> Office</strong>
+                                                <p class="text-muted">' . $user->profile->userType->info->office->name . '</p>
+                                            ';
+                                        }
                                     }
                                 ?>
                                 <?php
@@ -89,14 +100,21 @@
                                         echo '
                                             <strong class="text-success"><i class="fas fa-id-card mr-1"></i> Student Number</strong>
                                             <p class="text-muted">' . $user->profile->userType->info->studentNumber . '</p>
-                                            <hr>
-                                            <strong class="text-success"><i class="fas fa-building mr-1"></i> College</strong>
-                                            <p class="text-muted">' . $user->profile->userType->info->college->name . '</p>
-                                            <hr>
-                                            <strong class="text-success"><i class="fas fa-briefcase mr-1"></i> Course</strong>
-                                            <p class="text-muted">' . $user->profile->userType->info->course->name . '</p>
-                                            <hr>
                                         ';
+                                        if($user->profile->userType->info->college) {
+                                            echo '
+                                                <hr>
+                                                <strong class="text-success"><i class="fas fa-building mr-1"></i> College</strong>
+                                                <p class="text-muted">' . $user->profile->userType->info->college->name . '</p>
+                                            ';
+                                        }
+                                        if($user->profile->userType->info->course) {
+                                            echo '
+                                                <hr>
+                                                <strong class="text-success"><i class="fas fa-briefcase mr-1"></i> Course</strong>
+                                                <p class="text-muted">' . $user->profile->userType->info->course->name . '</p>
+                                            ';
+                                        }
                                     }
                                 ?>
                                 <!--

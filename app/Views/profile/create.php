@@ -132,13 +132,19 @@
                                         <div class="form-group row">
                                             <label for="mobileNumber" class="col-lg-2 col-sm-12 col-form-label">Mobile Number</label>
                                             <div class="col-lg-10 col-sm-12">
-                                                <input type="text" class="form-control" data-input="mobileNumber" placeholder="Mobile Number..." mainLength="11" maxLength="11" value="<?php echo $mobileNumber;?>">
-                                                <div class="valid-feedback">
-                                                    Mobile number is valid!
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                    <div class="input-group-text">+63</div>
+                                                    </div>
+                                                    <input type="text" class="form-control" data-input="mobileNumber" placeholder="Mobile Number..." minLength="10" maxLength="10" <?php echo $mobileNumber;?>>
+                                                    <div class="valid-feedback">
+                                                        Mobile number is valid!
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        Mobile number must contain 11 digits only! <em>Example: +63xxxxxxxxxx</em>
+                                                    </div>
                                                 </div>
-                                                <div class="invalid-feedback">
-                                                    Mobile number must contain 11 digits only! <em>Example: 09xxxxxxxxx</em>
-                                                </div>
+                                                <!-- <input type="text" class="form-control" data-input="mobileNumber" placeholder="Mobile Number..." mainLength="11" maxLength="11" value="<?php echo $mobileNumber;?>"> -->
                                             </div>
                                         </div>
                                     </div>
@@ -151,7 +157,7 @@
                                                     <?php
                                                         if($campuses) {
                                                             foreach($campuses as $campus) {
-                                                                echo '<option value="' . $campus['id'] .'">' . $campus['name'] .'</option>';
+                                                                echo '<option value="' . $campus->id .'">' . $campus->name .'</option>';
                                                             }
                                                         }
                                                     ?>
@@ -210,10 +216,10 @@
                                                     <?php
                                                         if($offices) {
                                                             foreach($offices as $office) {
-                                                                if($officeId == $office['id']) {
-                                                                    echo '<option value="' . $office['id'] .'" selected>' . $office['name'] .'</option>';
+                                                                if($officeId == $office->id) {
+                                                                    echo '<option value="' . $office->id .'" selected>' . $office->name .'</option>';
                                                                 } else {
-                                                                    echo '<option value="' . $office['id'] .'">' . $office['name'] .'</option>';
+                                                                    echo '<option value="' . $office->id .'">' . $office->name .'</option>';
                                                                 }
                                                             }
                                                         }
@@ -259,10 +265,10 @@
                                                     <?php
                                                         if($colleges) {
                                                             foreach($colleges as $college) {
-                                                                if($collegeId == $college['id']) {
-                                                                    echo '<option value="' . $college['id'] .'" selected>' . $college['name'] .'</option>';
+                                                                if($collegeId == $college->id) {
+                                                                    echo '<option value="' . $college->id .'" selected>' . $college->name .'</option>';
                                                                 } else {
-                                                                    echo '<option value="' . $college['id'] .'">' . $college['name'] .'</option>';
+                                                                    echo '<option value="' . $college->id .'">' . $college->name .'</option>';
                                                                 }
                                                             }
                                                         }
@@ -368,13 +374,14 @@
                                             <div class="col-12">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input type="checkbox" data-checkbox="terms"> I agree to the <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-xl" data-backdrop="static" data-keyboard="false" >terms and conditions</a>
+                                                        <input type="checkbox" data-checkbox="terms"> I agree to the CvSU Integrated Library System to manage provided information for a better experience of online services and not share with a third-party organization.
                                                     </label>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <input type="hidden" value="<?php echo $next;?>" data-redirect="next">
                                 <div class="card-footer box-profile">
                                     <button class="btn bg-gradient-light d-none" data-button="backStep">Back</button>
                                     <button class="btn bg-gradient-primary float-right" data-button="nextStep">Next</button>
@@ -386,7 +393,7 @@
                                     <i class="fas fa-check fa-2x mb-3"></i><br>Successfully completed your profile!
                                 </div>
                                 <div class="card-footer box-profile text-center text-muted">
-                                    Redirecting to Profile Page in <span data-countdown="refresh">5</span>
+                                    Redirecting to Profile Page in <span data-countdown="refresh">3</span>
                                 </div>
                             </div>
                             <div class="overlay d-none" data-loader="card">
@@ -409,6 +416,8 @@
     const backButton = document.querySelector('[data-button="backStep"]');
     const nextButton = document.querySelector('[data-button="nextStep"]');
     const finishButton = document.querySelector('[data-button="finishStep"]');
+    
+    const redirect = document.querySelector('[data-redirect="next"]');
 
     const form = document.querySelector('[data-form="createProfile"]');
     
@@ -631,7 +640,7 @@
                     ShowValidation(mobileNumberInput, "is-invalid");
                     isMobileNumberReady = false;
                 } else {
-                    if(mobileNumberInput.value.length != 11) {
+                    if(mobileNumberInput.value.length != 10 || isNaN(mobileNumberInput.value)) {
                         ShowValidation(mobileNumberInput, "is-invalid");
                         isMobileNumberReady = false;
                     } else {
@@ -712,6 +721,16 @@
                         isStudentNumberReady = true;
                     }
                 }
+
+                if(campusSelect.options[campusSelect.selectedIndex].value != 1) {
+                    if(userTypeSelect.options[userTypeSelect.selectedIndex].value == "Staff") {
+                        officeContainer.classList.add("d-none");
+                    } else {
+                        collegeContainer.classList.add("d-none");
+                        courseContainer.classList.add("d-none");
+                    }
+                }
+
                 if(collegeSelect.value === "") {
                     ShowValidation(collegeSelect, "is-invalid");
                     isCollegeReady = false;
@@ -765,6 +784,15 @@
                     ShowValidation(officeSelect, "is-valid");
                     isOfficeReady = true;
                 }
+
+                if(campusSelect.options[campusSelect.selectedIndex].value != 1) {
+                    if(userTypeSelect.options[userTypeSelect.selectedIndex].value == "Staff") {
+                        isOfficeReady = true;
+                    } else {
+                        isCollegeReady = true;
+                        isCourseReady = true;
+                    }
+                }
                 
                 studentNumberContainerAlt.classList.add("d-none");
                 officeContainerAlt.classList.add("d-none");
@@ -808,6 +836,16 @@
                         }
                         break;
                 }
+
+                if(campusSelect.options[campusSelect.selectedIndex].value != 1) {
+                    if(userTypeSelect.options[userTypeSelect.selectedIndex].value == "Staff") {
+                        officeContainerAlt.classList.add("d-none");
+                    } else {
+                        collegeContainerAlt.classList.add("d-none");
+                        courseContainerAlt.classList.add("d-none");
+                    }
+                }
+
                 break;
             case 5:
                 nameText.innerHTML = firstNameInput.value + " " + middleNameInput.value + " "  + lastNameInput.value;
@@ -824,7 +862,6 @@
                 officeText.innerHTML = officeSelect.options[officeSelect.selectedIndex].text;
                 break;
         }
-        // console.log(termsCheckBox.checked);
         if(termsCheckBox.checked) {
             finishButton.disabled = false;
         }
@@ -847,11 +884,29 @@
         formData.append('campus', campusSelect.options[campusSelect.selectedIndex].value);
         formData.append('userType', userTypeSelect.options[userTypeSelect.selectedIndex].value);
         formData.append('studentNumber', studentNumberInput.value);
-        formData.append('college', collegeSelect.options[collegeSelect.selectedIndex].value);
-        formData.append('course', courseSelect.options[courseSelect.selectedIndex].value);
-        formData.append('employeeId', employeeIdInput.value);
-        formData.append('position', positionInput.value);
-        formData.append('office', officeSelect.options[officeSelect.selectedIndex].value);
+        switch(userTypeSelect.options[userTypeSelect.selectedIndex].value) {
+            case "Student":
+                if(campusSelect.options[campusSelect.selectedIndex].value == 1) {
+                    formData.append('college', collegeSelect.options[collegeSelect.selectedIndex].value);
+                    formData.append('course', courseSelect.options[courseSelect.selectedIndex].value);
+                }
+                break;
+            case "Faculty":
+                formData.append('employeeId', employeeIdInput.value);
+                formData.append('position', positionInput.value);
+
+                if(campusSelect.options[campusSelect.selectedIndex].value == 1) {
+                    formData.append('college', collegeSelect.options[collegeSelect.selectedIndex].value);
+                }
+                break;
+            case "Staff":
+                if(campusSelect.options[campusSelect.selectedIndex].value == 1) {
+                    formData.append('office', officeSelect.options[officeSelect.selectedIndex].value);
+                }
+                formData.append('employeeId', employeeIdInput.value);
+                formData.append('position', positionInput.value);
+                break;
+        }
         $.ajax({
             type: "POST",
             url: "?view=createprofile",
@@ -876,7 +931,11 @@
             if (counter < 0 ) {
                 clearInterval(interval);
                 
-                location.reload();
+                if(redirect && redirect.value != "") {
+                    window.location.replace('?view=' + redirect.value);
+                } else {
+                    location.reload();
+                }
             }
         }, 1000);
     }

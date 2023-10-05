@@ -24,3 +24,23 @@ function ShowValidation(tag, value) {
         }
     }
 }
+
+function ApplyClass(element, css, value) {
+    if(value) {
+        if(element.classList.contains(css)) {
+            element.classList.remove(css);
+        }
+    } else {
+        if(!element.classList.contains(css)) {
+            element.classList.add(css);
+        }
+    }
+}
+
+function SetDisable(element, value) {
+    if(value) {
+        element.setAttribute("disabled", "");
+    } else {
+        element.removeAttribute("disabled");
+    }
+}

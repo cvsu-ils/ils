@@ -33,19 +33,32 @@ $app->router->Get('/downloads', [\IntegratedLibrarySystem\App\Controllers\Landin
 | AUTH View Routes
 |--------------------------------------------------------------------------
 */
+$app->router->Get('/profile', [\IntegratedLibrarySystem\Core\Controllers\ProfileController::class, 'Index']);
+$app->router->Get('/createprofile', [\IntegratedLibrarySystem\Core\Controllers\ProfileController::class, 'Create']);
+// Ebooks
+$app->router->Get('/ebooks', [\IntegratedLibrarySystem\App\Controllers\EbookController::class, 'Index']);
+$app->router->Get('/ebook/{id:\d+}', [\IntegratedLibrarySystem\App\Controllers\EbookController::class, 'Read']);
+// Ejournals
+$app->router->Get('/ejournals', [\IntegratedLibrarySystem\App\Controllers\EjournalController::class, 'Index']);
+$app->router->Get('/ejournal/{id:\d+}', [\IntegratedLibrarySystem\App\Controllers\EjournalController::class, 'Read']);
+// Auth and Guest
 $app->router->Get('/confirm', [\IntegratedLibrarySystem\Core\Controllers\AuthController::class, 'Auth']);
 $app->router->Get('/deauth', [\IntegratedLibrarySystem\Core\Controllers\AuthController::class, 'DeAuth']);
-$app->router->Get('/profile', [\IntegratedLibrarySystem\App\Controllers\ProfileController::class, 'Index']);
-$app->router->Get('/createprofile', [\IntegratedLibrarySystem\App\Controllers\ProfileController::class, 'Create']);
+$app->router->Get('/auth', [\IntegratedLibrarySystem\Core\Controllers\GuestController::class, 'SignIn']);
 
 /*
 |--------------------------------------------------------------------------
 | AJAX Routes
 |--------------------------------------------------------------------------
 */
+// Google callback
 $app->router->Post('/verify', [\IntegratedLibrarySystem\Core\Controllers\AuthController::class, 'Verification']);
-$app->router->Post('/getcourses', [\IntegratedLibrarySystem\App\Controllers\ProfileController::class, 'GetCourses']);
-$app->router->Post('/createprofile', [\IntegratedLibrarySystem\App\Controllers\ProfileController::class, 'Create']);
+
+$app->router->Post('/getcourses', [\IntegratedLibrarySystem\Core\Controllers\ProfileController::class, 'GetCourses']);
+$app->router->Post('/createprofile', [\IntegratedLibrarySystem\Core\Controllers\ProfileController::class, 'Create']);
+
+$app->router->Post('/guest/getcourses', [\IntegratedLibrarySystem\Core\Controllers\GuestController::class, 'GetCourses']);
+$app->router->Post('/guest/auth', [\IntegratedLibrarySystem\Core\Controllers\GuestController::class, 'Auth']);
 
 /*
 |--------------------------------------------------------------------------

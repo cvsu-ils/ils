@@ -7,7 +7,7 @@ use InfinityBrackets\Core\Controller;
 use InfinityBrackets\Core\Request;
 use InfinityBrackets\Core\Response;
 use InfinityBrackets\Exception\BadRequestException;
-use IntegratedLibrarySystem\App\Controllers\ProfileController;
+use IntegratedLibrarySystem\Core\Controllers\ProfileController;
 
 class LandingController extends Controller {
 
@@ -16,7 +16,7 @@ class LandingController extends Controller {
     }
 
     public function Index() {
-        $this->layout = "admin";
+        $this->SetLayout('admin');
         Application::$app->view->title = "CvSU ILS &sdot; Official Home Page";
         return $this->Render('landing/welcome', ['profileController' => new ProfileController()]);
     }
